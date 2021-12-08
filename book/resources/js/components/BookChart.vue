@@ -4,7 +4,7 @@ import axios from 'axios';
 
 export default {
     extends: Bar,
-    props:['dateMonth'],
+    props:['dateYear'],
     data: () => ({
         chartdata: {
             labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
@@ -20,26 +20,39 @@ export default {
             responsive: true,
             maintainAspectRatio: false
         },
-        test : '',
+        year : '',
     }),
 
     mounted () {
-        var now = new Date();
-        var year = now.getFullYear();
+        console.log(this.dateYear);
+        // console.log(year)
 
-        console.log(year)
-
-        axios.get('/bookYear/'+ year).then(response=>{
-            console.log(response.data);
-            console.log("전 " + this.chartdata.datasets[0].data);
+        axios.get('/bookYear/'+ this.dateYear).then(response=>{
+            // console.log(response.data);
+            // console.log("전 " + this.chartdata.datasets[0].data);
             this.chartdata.datasets[0].data = response.data;
 
-            console.log(this.chartdata.datasets[0].data);
+            // console.log(this.chartdata.datasets[0].data);
             this.renderChart(this.chartdata, this.options)
 
         }).catch(err=>{
             console.log(err);
         })
+    },
+    watch : {
+        dateYear : function (newVal, oldVal) {
+            axios.get('/bookYear/'+ newVal).then(response=>{
+                // console.log(response.data);
+                // console.log("전 " + this.chartdata.datasets[0].data);
+                this.chartdata.datasets[0].data = response.data;
+
+                // console.log(this.chartdata.datasets[0].data);
+                this.renderChart(this.chartdata, this.options)
+
+            }).catch(err=>{
+                console.log(err);
+            })
+        }
     }
 }
 </script>

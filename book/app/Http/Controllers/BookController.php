@@ -26,17 +26,11 @@ class BookController extends Controller
 
     public function bookYear($year)
     {
-        $bookY = Carbon::now()->timezone('Asia/Seoul')->format('Y');
-
-//        년도별
-//        $date = BookMangement::where('created_at', '=', '2021')->get();
-//        $date = DB::table('book_mangement')->whereYear('created_at',$bookY)->get();
-
         $dateMonth = array();
 
         for ($i = 1; $i <= 12; $i++){
             array_push($dateMonth,DB::table('book_mangement')->
-            whereYear('created_at',$bookY)->whereMonth('created_at',$i)
+            whereYear('created_at',$year)->whereMonth('created_at',$i)
                 ->get()->count() );
         }
 

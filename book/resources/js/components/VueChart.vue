@@ -1,9 +1,10 @@
 <template>
     <div>
-        <button class="p-2 pl-5 pr-5 bg-transparent border-2 border-gray-500 text-gray-500 text-lg
-         rounded-lg hover:bg-gray-500 hover:text-gray-100
-        focus:border-4 focus:border-gray-300">Secondary</button>
-        <book-chart></book-chart>
+        <button type="button" class="btn btn-secondary btn-lg" @click="previous" >앞</button>
+        <button type="button" class="btn btn-secondary btn-lg">{{this.year}}</button>
+        <button type="button" class="btn btn-secondary btn-lg" @click="adds">뒤</button>
+        <book-chart
+        :dateYear="year"></book-chart>
     </div>
 </template>
 
@@ -14,7 +15,30 @@ export default {
     name: "vuechart",
     components:{
         BookChart,
+    },
+    data() {
+        return {
+            year:""
+        }
+    },
+    mounted() {
+        var now = new Date();
+        this.year = now.getFullYear();
+    },
+    methods:{
+        previous(){
+
+            this.year = this.year-1
+
+            console.log(this.year)
+        },
+        adds(){
+            this.year = this.year + 1
+
+            console.log(this.year)
+        }
     }
+
 }
 </script>
 
