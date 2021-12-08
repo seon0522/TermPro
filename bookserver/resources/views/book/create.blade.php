@@ -25,6 +25,7 @@
 
                             <h5 class="mt-0">글 작성</h5>
                             <textarea name="bookinfo"></textarea>
+                            <br>
                             <button type="submit"> 등록 </button>
                         </div>
                 </div>

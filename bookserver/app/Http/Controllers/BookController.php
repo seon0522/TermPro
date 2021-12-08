@@ -16,6 +16,12 @@ class BookController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function bookMonth(){
+
+        return view('book.search');
+    }
+
 //    네이버 책 검색
     function booksearch(Request $request){
 

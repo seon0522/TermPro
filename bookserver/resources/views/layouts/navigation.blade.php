@@ -5,29 +5,26 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="{{ route('book.search') }}">
+                    <a href="{{ route('dashboard') }}">
                         <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                        {{ __('Dashboard') }}
+                    </x-nav-link>
                     <x-nav-link :href="route('book.index')" :active="request()->routeIs('book.index')">
                         {{ __('독후감') }}
                     </x-nav-link>
                     <x-nav-link :href="route('book.search')" :active="request()->routeIs('book.search')">
                         {{ __('독후감 작성') }}
                     </x-nav-link>
-
-{{--                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">--}}
-{{--                        {{ __('읽는 중') }}--}}
-{{--                    </x-nav-link>--}}
-{{--                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">--}}
-{{--                        {{ __('책 관심목록') }}--}}
-{{--                    </x-nav-link>--}}
+                    <x-nav-link :href="route('book.search')" :active="request()->routeIs('book.search')">
+                        {{ __('나의 독서량') }}
+                    </x-nav-link>
                 </div>
-
-
             </div>
 
             <!-- Settings Dropdown -->

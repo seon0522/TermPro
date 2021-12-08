@@ -49,15 +49,14 @@
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 {{--            border-b border-gray-200"--}}
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                        <div class="px-2 pt-2 bg-white ">
-                            당신의 책을 기록해 보세요
-                        </div>
+                    <div class="px-2 pt-2 bg-white ">
+                        당신의 책을 기록해 보세요
+                    </div>
                 </div>
             </div>
         </div>
     @endif
 </x-app-layout>
-
 
 
 

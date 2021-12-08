@@ -19,13 +19,8 @@ Route::get('/', function () {
 
 Route::resource('/book', \App\Http\Controllers\BookController::class);
 
-
 Route::get('search/{search?}', [\App\Http\Controllers\BookController::class, 'booksearch'])
     ->name('book.search');
-
-//Route::get('search/{search?}', [\App\Http\Controllers\BookController::class, 'booksearch'])
-//->name('book.search');
-
 
 Route::get('/dashboard', function () {
     return view('dashboard');
