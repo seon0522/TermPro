@@ -29,6 +29,8 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
-        "startbootstrap-simple-sidebar": "^6.0.4"
+        "chart.js": "^2.9.4",
+        "startbootstrap-simple-sidebar": "^6.0.4",
+        "vue-chartjs": "^3.5.1"
     }
 }

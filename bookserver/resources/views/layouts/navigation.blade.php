@@ -21,7 +21,7 @@
                     <x-nav-link :href="route('book.search')" :active="request()->routeIs('book.search')">
                         {{ __('독후감 작성') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('book.search')" :active="request()->routeIs('book.search')">
+                    <x-nav-link :href="route('book.bookMonth')" :active="request()->routeIs('book.bookMonth')">
                         {{ __('나의 독서량') }}
                     </x-nav-link>
                 </div>

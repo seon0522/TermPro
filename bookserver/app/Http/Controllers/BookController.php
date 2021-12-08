@@ -19,7 +19,7 @@ class BookController extends Controller
 
     public function bookMonth(){
 
-        return view('book.search');
+        return view('book.bookmonth');
     }
 
 //    네이버 책 검색

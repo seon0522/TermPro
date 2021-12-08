@@ -22,6 +22,9 @@ Route::resource('/book', \App\Http\Controllers\BookController::class);
 Route::get('search/{search?}', [\App\Http\Controllers\BookController::class, 'booksearch'])
     ->name('book.search');
 
+Route::get('bookMonth', [\App\Http\Controllers\BookController::class, 'bookMonth'])
+    ->name('book.bookMonth');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
