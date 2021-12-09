@@ -1,8 +1,9 @@
 <template>
     <div>
-        <button type="button" class="btn btn-secondary btn-lg" @click="previous" >앞</button>
-        <button type="button" class="btn btn-secondary btn-lg">{{this.year}}</button>
-        <button type="button" class="btn btn-secondary btn-lg" @click="adds">뒤</button>
+                <button type="button" class="btn btn-danger btn-lg" @click="previous" >앞</button>
+                <button type="button" class="btn btn-secondary btn-lg">{{this.year}}</button>
+                <button type="button" class="btn btn-danger btn-lg" @click="next">뒤</button>
+
         <book-chart
         :dateYear="year"></book-chart>
     </div>
@@ -32,7 +33,7 @@ export default {
 
             console.log(this.year)
         },
-        adds(){
+        next(){
             this.year = this.year + 1
 
             console.log(this.year)

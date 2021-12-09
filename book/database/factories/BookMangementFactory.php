@@ -16,7 +16,7 @@ class BookMangementFactory extends Factory
     public function definition()
     {
 
-        $date = $this->faker->dateTimeBetween('-200 day');
+        $date = $this->faker->dateTimeBetween('-1000 day');
 
         return [
             'title' => $this->faker->word(),

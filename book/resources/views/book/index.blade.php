@@ -13,7 +13,11 @@
                     <a href="{{route('book.show', ['book'=>$book->id])}}">
                         <div class="px-2 pt-2 bg-white ">
                             <div class="d-flex position-relative p-2 m-2" style="border:solid #F5F5F5">
+                                @if($book->image != null)
                                 <img id="image" src="{{$book->image}}" class="flex-shrink-0 me-3" alt="...">
+                                @else
+                                <img id="image" src="..." class="flex-shrink-0 me-3" alt="...">
+                                @endif
                                 <div>
                                     <h5 class="mt-0">{{$book->title}}</h5>
                                     <h5 class="mt-0">{{$book->author}}</h5>
@@ -30,7 +34,6 @@
             </div>
 
         </div>
-    </div>
     </div>
 
 

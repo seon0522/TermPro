@@ -12,7 +12,7 @@ export default {
                 {
                     label: '독서량',
                     backgroundColor: '#f87979',
-                    data: [],
+                    data: [10, 0],
                 },
             ]
         },
@@ -22,23 +22,6 @@ export default {
         },
         year : '',
     }),
-
-    mounted () {
-        console.log(this.dateYear);
-        // console.log(year)
-
-        axios.get('/bookYear/'+ this.dateYear).then(response=>{
-            // console.log(response.data);
-            // console.log("전 " + this.chartdata.datasets[0].data);
-            this.chartdata.datasets[0].data = response.data;
-
-            // console.log(this.chartdata.datasets[0].data);
-            this.renderChart(this.chartdata, this.options)
-
-        }).catch(err=>{
-            console.log(err);
-        })
-    },
     watch : {
         dateYear : function (newVal, oldVal) {
             axios.get('/bookYear/'+ newVal).then(response=>{
