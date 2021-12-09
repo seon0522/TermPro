@@ -9,6 +9,7 @@ use Illuminate\Support\Env;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Storage;
 use phpDocumentor\Reflection\Type;
 
 class BookController extends Controller
@@ -97,9 +98,8 @@ class BookController extends Controller
     public function index()
     {
 
-        $data = BookMangement::latest()->paginate(2);
+        $data = BookMangement::latest()->paginate(5);
 
-        //
         return view('book.index', ['data' => $data]);
     }
 

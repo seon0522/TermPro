@@ -13,12 +13,14 @@
                     <a href="{{route('book.show', ['book'=>$book->id])}}">
                         <div class="px-2 pt-2 bg-white ">
                             <div class="d-flex position-relative p-2 m-2" style="border:solid #F5F5F5">
-                                @if($book->image != null)
-                                <img id="image" src="{{$book->image}}" class="flex-shrink-0 me-3" alt="...">
+                                <div class="flex-shrink-1  me-3 w-20">
+                                @if($book->image == null)
+                                    <img id="image" src="storage/noimage/no_img.png" style="height:100px;" alt="...">
                                 @else
-                                <img id="image" src="..." class="flex-shrink-0 me-3" alt="...">
+                                <img id="image" src="{{$book->image}}" style="height:100px;" alt="...">
                                 @endif
-                                <div>
+                                </div>
+                                <div class="w-80">
                                     <h5 class="mt-0">{{$book->title}}</h5>
                                     <h5 class="mt-0">{{$book->author}}</h5>
                                 </div>
@@ -26,11 +28,9 @@
                         </div>
                     </a>
                 @endforeach
-
-            </div>
-
-            <div class="d-flex position-relative p-2 m-2">
-                {{ $data->links() }}
+                    <div class="d-flex justify-content-center">
+                        {{ $data->links() }}
+                    </div>
             </div>
 
         </div>

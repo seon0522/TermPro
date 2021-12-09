@@ -1,11 +1,13 @@
 <template>
     <div>
-                <button type="button" class="btn btn-danger btn-lg" @click="previous" >앞</button>
-                <button type="button" class="btn btn-secondary btn-lg">{{this.year}}</button>
-                <button type="button" class="btn btn-danger btn-lg" @click="next">뒤</button>
+        <p class="text-center m-4">
+            <button type="button" class="btn btn-danger btn-lg mx-auto" @click="previous"><</button>
+            <button type="button" class="btn btn-secondary btn-lg mx-auto">{{ this.year }}</button>
+            <button type="button" class="btn btn-danger btn-lg mx-auto" @click="next">></button>
+        </p>
 
         <book-chart
-        :dateYear="year"></book-chart>
+            :dateYear="year"></book-chart>
     </div>
 </template>
 
@@ -14,26 +16,26 @@ import BookChart from "./BookChart";
 
 export default {
     name: "vuechart",
-    components:{
+    components: {
         BookChart,
     },
     data() {
         return {
-            year:""
+            year: ""
         }
     },
     mounted() {
         var now = new Date();
         this.year = now.getFullYear();
     },
-    methods:{
-        previous(){
+    methods: {
+        previous() {
 
-            this.year = this.year-1
+            this.year = this.year - 1
 
             console.log(this.year)
         },
-        next(){
+        next() {
             this.year = this.year + 1
 
             console.log(this.year)

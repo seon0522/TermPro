@@ -5,11 +5,14 @@
         </h2>
 
         <h5>
-            1. 책을 검색 한 후, 독후감을 쓸 책을 골라주세요
             <form action="{{route('book.search')}}" method="get">
-                <input type="text" id="search" name="search">
-                <button type="submit">검색</button>
+                <input type="text" id="search" name="search" class="border border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent ...">
+                <button type="submit" class="bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 ...">
+                    검색
+                </button>
             </form>
+            1. 책을 검색 한 후, 독후감을 쓸 책을 골라주세요
+
         </h5>
     </x-slot>
 

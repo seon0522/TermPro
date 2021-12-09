@@ -8,11 +8,12 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 pb-2">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mb-lg-n1" style="border: solid 1px red">
                 <div class="p-6 bg-white border-b border-gray-200 mb-2" style="border: solid 1px black">
-
                     <input type="hidden" name="image" value="{{$book->image}}">
 
-                    <img src="{{$book->image}}" class="flex-shrink-0 me-3" alt="...">
+
                     <div>
+                        <img src="{{$book->image}}" class="img-thumbnail " alt="...">
+
                         <h5 class="mt-0">Title</h5>
                         <h5 class="mt-0">{{$book->title}}</h5>
                         <h5 class="mt-0">Author</h5>
