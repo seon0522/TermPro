@@ -6,14 +6,16 @@
 
         <h5>
             <form action="{{route('book.search')}}" method="get">
-                <input type="text" id="search" name="search" class="border border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent ...">
-                <button type="submit" class="bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50 ...">
-                    검색
-                </button>
+            <div class="input-group input-group-lg mb-3">
+                <input type="text" id="search" name="search" class="form-control form-control-lg rounded" placeholder="book search"
+                       aria-label="Type Keywords" aria-describedby="basic-addon2" />
+               <button type="submit" class="input-group-text border-0">검색</button>
+            </div>
             </form>
+        </h5>
             1. 책을 검색 한 후, 독후감을 쓸 책을 골라주세요
 
-        </h5>
+
     </x-slot>
 
     @if(isset($searchss))
@@ -30,7 +32,7 @@
                                 <input type="hidden" name="isbn" value="{{$value->isbn}}">
 
                                 <div class="d-flex position-relative p-2 m-2" style="border:solid #F5F5F5">
-                                    <img id="image" src="{{$value->image}}" class="flex-shrink-0 me-3" alt="...">
+                                    <img id="image" src="{{$value->image}}" class="flex-shrink-0 me-3 " alt="...">
                                     <div>
                                         <h5 class="mt-0">{{$value->title}}</h5>
                                         <h5 class="mt-0">{{$value->author}}</h5>

@@ -10,7 +10,7 @@
             {{--            border-b border-gray-200"--}}
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 @foreach($data as $book)
-                    <a href="{{route('book.show', ['book'=>$book->id])}}">
+                    <a href="{{route('book.show', ['book'=>$book->id])}}" style="text-decoration:none; color: #6b7280">
                         <div class="px-2 pt-2 bg-white ">
                             <div class="d-flex position-relative p-2 m-2" style="border:solid #F5F5F5">
                                 <div class="flex-shrink-1  me-3 w-20">
