@@ -23,6 +23,7 @@
                                 <div class="w-80">
                                     <h5 class="mt-0">{{$book->title}}</h5>
                                     <h5 class="mt-0">{{$book->author}}</h5>
+                                    <h5 class="mt-0">{{$book->description}}</h5>
                                 </div>
                             </div>
                         </div>

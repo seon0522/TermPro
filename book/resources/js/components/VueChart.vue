@@ -2,7 +2,7 @@
     <div>
         <p class="text-center m-4">
             <button type="button" class="btn btn-danger btn-lg mx-auto" @click="previous"><</button>
-            <button type="button" class="btn btn-secondary btn-lg mx-auto">{{ this.year }}</button>
+            <button type="button" disabled class="btn btn-secondary btn-lg mx-auto">{{ this.year }}</button>
             <button type="button" class="btn btn-danger btn-lg mx-auto" @click="next">></button>
         </p>
 

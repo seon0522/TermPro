@@ -30,15 +30,13 @@ class BookController extends Controller
         $dateMonth = array();
 
         for ($i = 1; $i <= 12; $i++){
-            array_push($dateMonth,DB::table('book_mangement')->
+            array_push($dateMonth,DB::table('book_mangement')->where("user_id" , "=", auth()->user()->id)->
             whereYear('created_at',$year)->whereMonth('created_at',$i)
-                ->get()->count() );
+                ->get()->count());
         }
 
         return $dateMonth;
     }
-
-
 
 //    네이버 책 검색
     function booksearch(Request $request)
@@ -77,8 +75,9 @@ class BookController extends Controller
                 $bookscount[$key] = (object)$book;
             }
 
-
             $searchResult = $bookscount;
+
+//            return $searchResult;
 
             return view('book.search', ['searchss' => $searchResult]);
         }
@@ -98,7 +97,7 @@ class BookController extends Controller
     public function index()
     {
 
-        $data = BookMangement::latest()->paginate(5);
+        $data = auth()->user()->bookmangement()->latest()->paginate(5);
 
         return view('book.index', ['data' => $data]);
     }
@@ -113,9 +112,10 @@ class BookController extends Controller
 //    독후감 생성
     public function create(Request $request)
     {
-
-//        dd($request);
         $book = $request;
+
+        $book->title =  strip_tags($request->title);
+        $book->author =  strip_tags($request->author);
 
         return view('book.create', ["book" => $book]);
     }
@@ -130,6 +130,8 @@ class BookController extends Controller
 //    독후감 저장
     public function store(Request $request)
     {
+//        태그 제거
+//        strip_tags($request->)
 
         $bookInsert = new BookMangement();
 

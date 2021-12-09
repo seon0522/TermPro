@@ -17,9 +17,9 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    public function Bookmanagement(){
+    public function bookmangement(){
 
-        return $this->hasMany(BookManagement::class);
+        return $this->hasMany(BookMangement::class);
     }
 
     protected $fillable = [

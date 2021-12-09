@@ -28,6 +28,7 @@ Route::get('bookMonth', [\App\Http\Controllers\BookController::class, 'bookMonth
 
 Route::get('bookYear/{year}', [\App\Http\Controllers\BookController::class, 'bookYear']);
 
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');

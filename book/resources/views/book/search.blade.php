@@ -31,12 +31,12 @@
                                 <input type="hidden" name="author" value="{{$value->author}}">
                                 <input type="hidden" name="isbn" value="{{$value->isbn}}">
 
-                                <div class="d-flex position-relative p-2 m-2" style="border:solid #F5F5F5">
-                                    <img id="image" src="{{$value->image}}" class="flex-shrink-0 me-3 " alt="...">
+                                <div class="d-flex position-relative p-2 m-2  " style="border:solid #F5F5F5">
+                                    <img id="image" src="{!! $value->image !!}" class="flex-shrink-0 me-3 w-20" alt="...">
                                     <div>
-                                        <h5 class="mt-0">{{$value->title}}</h5>
-                                        <h5 class="mt-0">{{$value->author}}</h5>
-                                        <p name="description">{{$value->description}}</p>
+                                        <h5 class="mt-0">{!!$value->title!!}</h5>
+                                        <h5 class="mt-0">{!!$value->author!!}</h5>
+                                        <p name="description">{!!$value->description!!}</p>
                                         <button type="submit" class="btn btn-outline" style="border:solid #F5F5F5">작성
                                         </button>
                                     </div>
