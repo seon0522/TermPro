@@ -30,7 +30,7 @@ class BookController extends Controller
         $dateMonth = array();
 
         for ($i = 1; $i <= 12; $i++){
-            array_push($dateMonth,DB::table('book_mangement')->where("user_id" , "=", auth()->user()->id)->
+            array_push($dateMonth,DB::table('book_mangements')->where("user_id" , "=", auth()->user()->id)->
             whereYear('created_at',$year)->whereMonth('created_at',$i)
                 ->get()->count());
         }

@@ -17,10 +17,9 @@
                                 <img id="image" src="{{$book->image}}" style="height:100px;" alt="...">
                             @endif
                         </div>
-                        <div class="">
-                            <h5 class="mt-0">{{"$book->title"}}</h5>
-                            <h5 class="mt-0">{{"$book->author"}}</h5>
-                            <h5 class="mt-0"><div>{{"$book->created_at"}}</div></h5>
+                        <div >
+                            <h5 class="mt-0">제목: {{$book->title}}</h5>
+                            <h5 class="mt-0">저자: {{$book->author}}</h5>
                         </div>
 
                     </div>
@@ -30,8 +29,12 @@
                             <p class="card-text">{{$book->text}}</p>
                         </div>
                     </div>
-
+                    <div class="w-70">
+                        <h5 class="mt-0">작성일 : {{"$book->created_at"}}</h5>
+                        <h5 class="mt-0">수정일 : {{"$book->updated_at"}}</h5>
+                    </div>
                 </div>
+
                 <div class="d-flex position-relative p-2 m-2">
                     <form id="form" class="ml-4 w-auto"
                           action="{{ route('book.edit', ['book'=>$book->id]) }}">
