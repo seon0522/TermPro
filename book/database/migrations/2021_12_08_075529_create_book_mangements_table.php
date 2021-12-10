@@ -18,7 +18,7 @@ class CreateBookMangementsTable extends Migration
             $table->string('title');
             $table->string('author');
             $table->text('text');
-            $table->string('isbn')->unique();
+            $table->string('isbn');
             $table->string('image')->nullable();
             $table->foreignId('user_id')
                 ->constrained()

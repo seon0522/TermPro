@@ -131,13 +131,16 @@ class BookController extends Controller
     public function store(Request $request)
     {
 //        태그 제거
-//        strip_tags($request->)
 
         $bookInsert = new BookMangement();
 
         $bookInsert->title = $request->title;
         $bookInsert->author = $request->author;
-        $bookInsert->text = $request->bookinfo;
+        if ($request->bookinfo == null){
+            $bookInsert->text = " ";
+        }else{
+            $bookInsert->text = $request->bookinfo;
+        }
         $bookInsert->isbn = $request->isbn;
         $bookInsert->image = $request->image;
         $bookInsert->user_id = Auth::id();

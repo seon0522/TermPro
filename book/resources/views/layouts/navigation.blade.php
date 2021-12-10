@@ -6,7 +6,8 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
                     <a href="{{ route('book.index') }}">
-                        <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
+{{--                        <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />--}}
+                        <img id="image" src="storage/image/reading-book.png" class="block h-12 w-auto fill-current text-gray-600" alt="...">
                     </a>
                 </div>
 
@@ -69,8 +70,14 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
+            <x-responsive-nav-link :href="route('book.index')" :active="request()->routeIs('book.index')">
+                {{ __('독후감') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('book.search')" :active="request()->routeIs('book.search')">
+                {{ __('독후감 작성') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('book.bookMonth')" :active="request()->routeIs('book.bookMonth')">
+                {{ __('나의 독서량') }}
             </x-responsive-nav-link>
         </div>
 

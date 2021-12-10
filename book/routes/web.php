@@ -18,7 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('/book', \App\Http\Controllers\BookController::class);
+Route::resource('/book', \App\Http\Controllers\BookController::class)
+->middleware(['auth']);
 
 Route::get('search/{search?}', [\App\Http\Controllers\BookController::class, 'booksearch'])
     ->name('book.search');
