@@ -41,10 +41,12 @@
                         <button type="submit" class="btn btn-outline" style="border:solid #F5F5F5">수정</button>
                     </form>
                     <form id="form" class="ml-4 w-auto" method="post"
-                          action="{{ route('book.destroy', ['book'=>$book->id]) }}">
+                          action="{{ route('book.destroy', ['book'=>$book->id]) }}"
+                          onsubmit="onDelete(event)"
+                    >
                         @csrf
                         @method('delete')
-                        <button id="des" type="submit" onsubmit="onDelete(event)" class="btn btn-outline" style="border:solid #F5F5F5">삭제</button>
+                        <button id="des" type="submit" class="btn btn-outline" style="border:solid #F5F5F5">삭제</button>
                     </form>
                 </div>
             </div>

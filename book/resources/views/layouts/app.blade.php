@@ -48,23 +48,4 @@
             e.preventDefault();
         }
     }
-
-    function showMessage(){
-        Swal.fire({
-            title: '진짜 삭제하시나요?',
-            text: "삭제하면 다시는 되돌릴 수 없습니다!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                Swal.fire(
-                    'Deleted!',
-                    'success'
-                )
-            }
-        })
-    }
 </script>
