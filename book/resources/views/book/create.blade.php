@@ -15,7 +15,7 @@
                         <input type="hidden" name="title" value="{{$book->title}}">
                         <input type="hidden" name="author" value="{{$book->author}}">
                         <input type="hidden" name="isbn" value="{{$book->isbn}}">
-                        <div class="flex-shrink-1  me-3 w-30" >
+                        <div class="flex-shrink-1  me-3 w-30">
                             @if($book->image == null)
                                 <img id="image" src="storage/noimage/no_img.png" style="height:200px;" alt="...">
                             @else
@@ -29,14 +29,16 @@
                             <h5 class="mt-0">Author</h5>
                             <h5 class="mt-0">{{$book->author}}</h5>
                         </div>
-                            <div class="card bg-light mb-3" style="max-height: 18rem;">
-                                <div class="card-header">독후감</div>
-                                <div class="card-body">
-                                    <textarea name="bookinfo" rows="5"  style="width:100%;"></textarea>
-                                </div>
+                        <div class="card bg-light mb-3" style="max-height: 18rem;">
+                            <div class="card-header">독후감</div>
+                            <div class="card-body">
+                                <textarea name="bookinfo" rows="5" style="width:100%;"></textarea>
                             </div>
+                        </div>
 
-                            <h5 class="mt-0"><button type="submit"> 등록 </button></h5>
+                        <h5 class="mt-0">
+                            <button type="submit"> 등록</button>
+                        </h5>
 
 
                     </div>

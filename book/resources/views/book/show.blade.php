@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __($book->title) }}
+            {{ __("독후감") }}
         </h2>
     </x-slot>
     <div class="py-12">
@@ -44,7 +44,7 @@
                           action="{{ route('book.destroy', ['book'=>$book->id]) }}">
                         @csrf
                         @method('delete')
-                        <button id="des" type="submit" onclick="sweetAlert()" class="btn btn-outline" style="border:solid #F5F5F5">삭제</button>
+                        <button id="des" type="submit" onsubmit="onDelete(event)" class="btn btn-outline" style="border:solid #F5F5F5">삭제</button>
                     </form>
                 </div>
             </div>
@@ -53,30 +53,3 @@
     </div>
 
 </x-app-layout>
-
-<script>
-
-    $("des").click(function(){
-        console.log("ddddd");
-        Swal.fire({
-            title: '진짜 삭제하시나요?',
-            text: "삭제하면 다시는 되돌릴 수 없습니다!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                Swal.fire(
-                    'Deleted!',
-                    'success'
-                )
-            }
-        })
-    });
-
-    function sweetAlert(){
-
-    }
-</script>
